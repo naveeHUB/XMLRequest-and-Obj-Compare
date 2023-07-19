@@ -1,0 +1,66 @@
+1..Find all the information about each products
+
+=>syntax =>Database.collection Name.find()
+
+=>db.Example.find()
+
+
+2..Find the product price which are between 400 to 800
+
+=>Syntax =>Database.Collection name.find({product_price:{$lt:800,$gt:400}})
+
+=>db.Example.find({product_price:{$lt:800,$gt:400}})
+
+
+3..Find the product price which are not between 400 to 600
+
+=>Syntax =>Database.Collection name.find({product_price:{$not:{$lt:600,$gt:400}}})
+
+=>db.Example.find({product_price:{$not:{$lt:600,$gt:400}}})
+
+
+4..List the four product which are grater than 500 in price 
+
+=>syntax => Database.collection name.find({product_price:{$gt:500}}).limit(5)
+
+=>db.Example.find({product_price:{$gt:500}}).limit(5)
+
+
+5..Find the product name and product material of each products
+
+=>syntax =>Database.collection name.find().projection({product_name:1,product_material:1})
+
+=>db.Example.find().projection({product_name:1,product_material:1})
+
+
+6..Find the product with a row id of 10
+
+=>syntax =>Database.collection name.find({id:'10'})
+
+=>db.Exapmle.find({id:'10'})
+
+
+7..Find only the product name and product material
+
+=>syntax =>Database.collection name.find().projection({product_name:1,product_material:1,_id:0})
+
+=>db.Example.find().projection({product_name:1,product_material:1,_id:0})
+
+8..Find all products which contain the value of soft in product material 
+
+=>syntax =>Database.collection name.find({product_material:'soft'})
+
+=>db.Example.find({product_material: 'Soft'})
+
+
+9..Find products which contain product color indigo  and product price 492.00
+
+=>Database.collection Name.find({$or:[{Product_color:'indigo'},{product_price:492.00}]})
+
+=>db.Example.find({$or:[{ product_color: 'indigo'},{product_price: 492.00}]})
+
+10..Delete the products which product price value are same
+
+=>database.collection Name.deleteMany(product_value : value)
+
+=>db.Example.deletemany({product_price:36})
